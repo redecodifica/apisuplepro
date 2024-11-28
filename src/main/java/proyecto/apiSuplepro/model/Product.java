@@ -25,19 +25,23 @@ public class Product {
  @Column(nullable = false)
  private String estado;
 
+ @Column(nullable = false)
+ private String imagenUrl;
+
  @Column(columnDefinition = "json")
  private String metaData;
 
  // Constructores
  public Product() {}
 
- public Product(Long id, String nombre, String slug, Double precio, Integer stock, String estado, String metaData) {
+ public Product(Long id, String nombre, String slug, Double precio, Integer stock, String estado, String imagenUrl, String metaData) {
      this.id = id;
      this.nombre = nombre;
      this.slug = slug;
      this.precio = precio;
      this.stock = stock;
      this.estado = estado;
+     this.imagenUrl = imagenUrl;
      this.metaData = metaData;
  }
 
@@ -90,6 +94,14 @@ public class Product {
      this.estado = estado;
  }
 
+ public String getImagenUrl() {
+     return imagenUrl;
+ }
+ 
+ public void setImagenUrl(String imagenUrl) {
+	 this.imagenUrl = imagenUrl;
+ }
+ 
  public String getMetaData() {
      return metaData;
  }
